@@ -5,7 +5,7 @@ import {
   LogoutLink,
 } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { KindeProvider } from "@kinde-oss/kinde-auth-nextjs";
+import { AuthProvider } from "./components/AuthProvider";
 import Link from "next/link";
 
 export const metadata = {
@@ -23,7 +23,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
-        <KindeProvider>
+        <AuthProvider>
           <header>
             <nav className="nav container">
               <h1 className="text-display-3">KindeAuth</h1>
@@ -78,7 +78,7 @@ export default async function RootLayout({
               </small>
             </div>
           </footer>
-        </KindeProvider>
+        </AuthProvider>
       </body>
     </html>
   );
